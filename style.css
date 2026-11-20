@@ -1,0 +1,637 @@
+
+:root {
+    --cream: #f8f3e9;
+    --green: #183d2c;
+    --green-light: #28533e;
+    --gold: #bd9955;
+    --text: #403b32;
+    --white: #fffdf8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 85px;
+}
+
+body {
+    background: var(--cream);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    line-height: 1.7;
+}
+
+h1, h2, h3, .logo {
+    font-family: 'Playfair Display', serif;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--cream);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 8%;
+    box-shadow: 0 2px 12px #0000000d;
+}
+
+.logo {
+    color: var(--green);
+    font-size: 23px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.logo span {
+    display: block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+}
+
+nav {
+    display: flex;
+    gap: 27px;
+}
+
+nav a, .social-links a {
+    text-decoration: none;
+    color: var(--green);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+nav a:hover, .social-links a:hover {
+    color: var(--gold);
+}
+
+.menu-btn {
+    display: none;
+    border: 0;
+    background: none;
+    color: var(--green);
+    font-size: 26px;
+    cursor: pointer;
+}
+
+.hero {
+    min-height: 570px;
+    display: flex;
+    align-items: center;
+    padding: 70px 9%;
+    background:
+        linear-gradient(90deg, #142f24ee 0%, #142f24aa 55%, #142f2460 100%),
+        url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+}
+
+.hero-content {
+    max-width: 580px;
+    color: white;
+}
+
+.eyebrow {
+    color: var(--gold);
+    letter-spacing: 3px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 6vw, 72px);
+    line-height: 1.15;
+    margin-bottom: 20px;
+}
+
+.hero h1 span, h2 span {
+    color: var(--gold);
+}
+
+.hero-content > p:not(.eyebrow) {
+    max-width: 460px;
+    margin-bottom: 30px;
+    color: #f2eee5;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--gold);
+    color: #182c20;
+    border: none;
+    padding: 14px 25px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 3px;
+}
+
+.btn:hover {
+    background: #d6b778;
+    transform: translateY(-2px);
+}
+
+.section {
+    padding: 85px 9%;
+}
+
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 65px;
+}
+
+.about-image img {
+    width: 100%;
+    height: 430px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.about-content h2, .section-heading h2,
+.contact h2 {
+    font-size: clamp(32px, 4vw, 46px);
+    color: var(--green);
+    line-height: 1.25;
+    margin-bottom: 20px;
+}
+
+.about-content > p:not(.eyebrow) {
+    margin-bottom: 16px;
+}
+
+.text-link {
+    color: var(--green);
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 12px;
+}
+
+.gallery, .booking {
+    background: #efe7d8;
+}
+
+.section-heading, .contact {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-heading > p:not(.eyebrow) {
+    color: #766e61;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.gallery-card {
+    background: var(--white);
+    padding: 10px 10px 20px;
+    text-align: center;
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.gallery-card h3 {
+    color: var(--green);
+    padding-top: 15px;
+}
+
+.gallery-note, .price-note {
+    text-align: center;
+    margin-top: 24px;
+    font-size: 12px;
+    color: #766e61;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.service-card {
+    text-align: center;
+    background: var(--white);
+    padding: 32px 18px;
+    border-bottom: 3px solid var(--gold);
+    transition: 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+}
+
+.service-icon {
+    color: var(--gold);
+    font-size: 36px;
+}
+
+.service-card h3 {
+    color: var(--green);
+    margin: 12px 0;
+}
+
+.service-card p {
+    font-size: 13px;
+}
+
+.booking-form {
+    max-width: 580px;
+    margin: auto;
+    padding: 35px;
+    background: var(--white);
+    border-radius: 5px;
+}
+
+.booking-form label {
+    display: block;
+    color: var(--green);
+    font-size: 14px;
+    font-weight: 600;
+    margin: 15px 0 6px;
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ded5c5;
+    background: #fffefa;
+    border-radius: 3px;
+    font: inherit;
+    color: var(--text);
+}
+
+.booking-form input:focus,
+.booking-form select:focus,
+.booking-form textarea:focus {
+    outline: 2px solid var(--gold);
+}
+
+.booking-form .btn {
+    width: 100%;
+    margin-top: 22px;
+}
+
+#formMessage {
+    margin-top: 15px;
+    color: var(--green);
+    text-align: center;
+    font-size: 14px;
+}
+
+.contact {
+    background: var(--green);
+    color: white;
+    margin-bottom: 0;
+}
+
+.contact h2 {
+    color: white;
+}
+
+.contact > p:not(.eyebrow) {
+    margin-bottom: 25px;
+}
+
+.social-links {
+    margin-top: 25px;
+}
+
+.social-links a {
+    color: #f5e7c6;
+    margin: 0 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 28px 15px;
+    background: #102a1e;
+    color: #eee7da;
+    font-size: 12px;
+}
+
+footer h3 {
+    font-size: 21px;
+    color: var(--gold);
+    margin-bottom: 5px;
+}
+
+.whatsapp {
+    position: fixed;
+    bottom: 22px;
+    right: 22px;
+    z-index: 99;
+    background: #218b51;
+    color: white;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    text-decoration: none;
+    font-weight: 700;
+    box-shadow: 0 3px 12px #0003;
+}
+
+@media (max-width: 850px) {
+    .header {
+        padding: 15px 5%;
+    }
+
+    nav {
+        gap: 14px;
+    }
+
+    .section {
+        padding: 65px 6%;
+    }
+
+    .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    .menu-btn {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--cream);
+        flex-direction: column;
+        padding: 20px 6%;
+        box-shadow: 0 8px 12px #00000012;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    .hero {
+        min-height: 500px;
+        padding: 55px 7%;
+        background-position: center;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .about-image img {
+        height: 300px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-card img {
+        height: 320px;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .booking-form {
+        padding: 22px;
+    }
+}
+.service-card {
+    overflow: hidden;
+    border-radius: 8px;
+    background: #fffdf8;
+    text-align: center;
+    padding: 0 0 22px;
+    border-bottom: 3px solid #bd9955;
+    transition: 0.3s;
+}
+
+.service-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    display: block;
+}
+
+.service-card h3 {
+    color: #183d2c;
+    margin: 18px 10px 8px;
+}
+
+.service-card p {
+    padding: 0 15px;
+    font-size: 13px;
+}
+
+.booking {
+  text-align: center;
+  padding: 60px 20px;
+  background: #f8f5ed;
+}
+
+.booking h2 {
+  color: #536b45;
+  font-size: 30px;
+}
+
+.booking p {
+  color: #777;
+  margin-bottom: 30px;
+}
+
+.contact-options {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.contact-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 22px;
+  background: white;
+  color: #536b45;
+  border: 1px solid #d8c9aa;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.contact-btn:hover {
+  background: #536b45;
+  color: white;
+}
+
+.contact-btn img {
+  width: 25px;
+  height: 25px;
+}
+
+.about-section {
+    background: #fff8ef;
+    padding: 70px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+    color: #70252a;
+}
+
+.about-content {
+    flex: 1;
+    min-width: 280px;
+}
+
+.about-content h2 {
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+
+.about-content h3 {
+    font-size: 25px;
+    margin: 15px 0;
+}
+
+.about-content p {
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.about-images {
+    flex: 1;
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.about-images img {
+    width: 100%;
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 5px solid #f1d0bd;
+}
+
+.about-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.about-features span {
+    background: #f5dfd0;
+    padding: 12px;
+    border-radius: 15px;
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    .about-section {
+        flex-direction: column;
+        padding: 40px 6%;
+    }
+
+    .about-content h2 {
+        font-size: 35px;
+    }
+}
+
+/* Traditional Mehndi Corner Decoration */
+
+.about-section {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Mehndi Mandala - Top Left */
+.about-section::before {
+    content: "";
+    position: absolute;
+    top: -55px;
+    left: -55px;
+    width: 210px;
+    height: 210px;
+    border-radius: 50%;
+    opacity: 0.75;
+    pointer-events: none;
+
+    background:
+        radial-gradient(circle, transparent 15%, #873b32 16% 17%, transparent 18% 27%, #873b32 28% 29%, transparent 30% 39%, #873b32 40% 41%, transparent 42%),
+        repeating-conic-gradient(
+            from 0deg,
+            transparent 0deg 7deg,
+            #873b32 8deg 9deg,
+            transparent 10deg 15deg
+        );
+
+    border: 3px double #873b32;
+}
+
+/* Mehndi Mandala - Bottom Right */
+.about-section::after {
+    content: "";
+    position: absolute;
+    bottom: -65px;
+    right: -65px;
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    opacity: 0.75;
+    pointer-events: none;
+
+    background:
+        radial-gradient(circle, transparent 15%, #873b32 16% 17%, transparent 18% 27%, #873b32 28% 29%, transparent 30% 39%, #873b32 40% 41%, transparent 42%),
+        repeating-conic-gradient(
+            from 0deg,
+            transparent 0deg 7deg,
+            #873b32 8deg 9deg,
+            transparent 10deg 15deg
+        );
+
+    border: 3px double #873b32;
+}
+
+.about-content,
+.about-images {
+    position: relative;
+    z-index: 1;
+}
+
+
+
